@@ -3,7 +3,10 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { BusinessSolutions } from "@/components/BusinessSolutions";
+import { BusinessSolutions } from "@/components/BusinessSection/BusinessSolutions";
+import Sec from "@/components/s";
+import MyComponent from "@/components/Footer/MainComponent";
+import Main from "@/components/ServicesSection/Main";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -67,6 +70,8 @@ export default function Home() {
               alt="Vierra"
               width={671}
               height={685}
+              priority
+              quality={100}
             />
           </div>
         </main>
@@ -97,6 +102,9 @@ export default function Home() {
         </section>
       </div>
       <BusinessSolutions />
+      {/* <Sec /> */}
+      {/* <MyComponent /> */}
+      <Main />
     </>
   );
 }
