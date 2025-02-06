@@ -46,7 +46,7 @@ export function BusinessSolutions() {
   const [activeTab, setActiveTab] = useState("efficiency");
 
   return (
-    <section className="w-full py-20 px-6 bg-white">
+    <section className="w-full py-20 px-6 bg-white" id="solutions">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <h2

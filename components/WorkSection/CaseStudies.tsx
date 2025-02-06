@@ -12,7 +12,7 @@ export function CaseStudies() {
   return (
     <>
       <SectionTitle title="Our work" />
-      <div className="mt-16 md:mt-32 md:px-20">
+      <div className="mt-16 md:mt-32 md:px-20" id="cases">
         {/* Header Section */}
         <div className="relative mb-8 md:mb-16">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 items-start lg:items-center max-w-[1200px] max-md:px-2 my-0 mx-auto">

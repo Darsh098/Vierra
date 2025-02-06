@@ -6,25 +6,27 @@ import { Play } from "lucide-react";
 export function ImageComponent() {
   const imageSections = [
     {
-      src: "/cs1.jpeg",
+      src: "/cs/cs1.jpeg",
       alt: "Image for introduction section",
       className:
         "object-cover shrink-0 w-full rounded-[30px] md:rounded-[60px] h-[300px] md:h-[422px] md:w-[716px] lg:shadow-[20px_15px_100px_0px_#7A13D080]",
     },
     {
-      src: "/cs2.jpeg",
+      src: "/cs/cs2.jpeg",
       alt: "Image for first section",
       className:
         "object-cover shrink-0 w-full rounded-[30px] md:rounded-[60px] h-[269px] md:w-[269px]",
     },
+
     {
-      src: "/cs3.jpeg",
+      src: "/cs/cs3.jpeg",
       alt: "Image for second section",
       className:
         "object-cover shrink-0 w-full rounded-[30px] md:rounded-[60px] h-[296px] md:w-[470px]",
     },
+
     {
-      src: "/cs4.jpeg",
+      src: "/cs/cs4.jpeg",
       alt: "Image for third section",
       className:
         "object-cover shrink-0 w-full rounded-[30px] md:rounded-[60px] h-[391px] md:w-[280px]",

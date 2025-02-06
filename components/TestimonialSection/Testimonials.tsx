@@ -13,18 +13,18 @@ const testimonials = [
   {
     name: "Brian Chesky",
     role: "CEO Airbnb",
-    image: "/brian-chesky.png",
+    image: "/Testimonials/brian-chesky.png",
     rating: 5,
     text: "With Vierra's tools we optimize all our marketing and communication tasks. The user-friendly interface offers a wide range of collaboration options.",
-    companyLogo: "/airbnb-logo.svg",
+    companyLogo: "/Testimonials/airbnb-logo.svg",
   },
   {
     name: "Elon Musk",
     role: "CEO Tesla & SpaceX",
-    image: "/elon-musk.jpg",
+    image: "/Testimonials/elon-musk.jpg",
     rating: 4,
     text: "Vierra Digital's automation tools have significantly improved our ad performance and conversion rates across multiple platforms.",
-    companyLogo: "/tesla-logo.svg",
+    companyLogo: "/Testimonials/tesla-logo.svg",
   },
 ];
 
@@ -59,7 +59,7 @@ export function TestimonialsSection() {
             className="border-2 border-[#7A13D0] rounded-full p-2 md:p-4 cursor-pointer hover:bg-[#6610B2] transition-colors"
             onClick={nextTestimonial}
           >
-            <ArrowRight size={24}/>
+            <ArrowRight size={24} />
           </div>
         </div>
 

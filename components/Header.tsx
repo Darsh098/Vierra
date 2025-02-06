@@ -24,25 +24,25 @@ export function Header() {
           className={`hidden md:flex items-center gap-8 text-[16px] ${bricolage.className}`}
         >
           <Link
-            href="/about"
+            href="#about"
             className=" hover:text-[#8F42FF] transition-colors"
           >
             About us
           </Link>
           <Link
-            href="/services"
+            href="#services"
             className=" hover:text-[#8F42FF] transition-colors"
           >
             Services
           </Link>
           <Link
-            href="/solutions"
+            href="#solutions"
             className=" hover:text-[#8F42FF] transition-colors"
           >
             Solutions
           </Link>
           <Link
-            href="/cases"
+            href="#cases"
             className=" hover:text-[#8F42FF] transition-colors"
           >
             Cases

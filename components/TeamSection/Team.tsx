@@ -52,7 +52,10 @@ export function TeamSection() {
   const radius = 400; // Adjust this value to change the circle size
 
   return (
-    <section className="w-full min-h-screen bg-[#010205] max-md:pt-20 lg:pt-[420px] pb-20 overflow-hidden">
+    <section
+      className="w-full min-h-screen bg-[#010205] max-md:pt-20 lg:pt-[420px] overflow-hidden"
+      id="about"
+    >
       <div className="container mx-auto px-4">
         {/* Center Content */}
         <div className="flex flex-col items-center justify-center mb-20">

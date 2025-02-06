@@ -15,10 +15,10 @@ interface Service {
 }
 
 const services: Service[] = [
-  { id: "01", name: "Marketing", image: "/object1.png" },
-  { id: "02", name: "Startups", image: "/object2.png" },
-  { id: "03", name: "Healthcare", image: "/object3.png" },
-  { id: "04", name: "Enterprise", image: "/object4.png" },
+  { id: "01", name: "Marketing", image: "/Objects/object1.png" },
+  { id: "02", name: "Startups", image: "/Objects/object2.png" },
+  { id: "03", name: "Healthcare", image: "/Objects/object3.png" },
+  { id: "04", name: "Enterprise", image: "/Objects/object4.png" },
 ];
 
 // Morphing variants
@@ -55,7 +55,7 @@ export function Services() {
   const [activeService, setActiveService] = useState("02");
 
   return (
-    <div className="w-full max-w-[1174px] px-4 md:px-6 lg:px-0">
+    <div className="w-full max-w-[1174px] px-4 md:px-6 lg:px-0" id="services">
       <SectionTitle title="Services" />
 
       {/* Main Card */}
