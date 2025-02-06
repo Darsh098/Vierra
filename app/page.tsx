@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { BusinessSolutions } from "@/components/BusinessSection/BusinessSolutions";
 import Main from "@/components/ServicesSection/Main";
 import TestimonialsSection from "@/components/TestimonialSection/Testimonials";
+import TeamSection from "@/components/TeamSection/Team";
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
@@ -102,6 +103,7 @@ export default function Home() {
       <BusinessSolutions />
       <Main />
       <TestimonialsSection />
+      <TeamSection />
     </>
   );
 }
