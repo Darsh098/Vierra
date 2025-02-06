@@ -4,10 +4,8 @@ import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { BusinessSolutions } from "@/components/BusinessSection/BusinessSolutions";
-import Sec from "@/components/s";
-import MyComponent from "@/components/Footer/MainComponent";
 import Main from "@/components/ServicesSection/Main";
-
+import TestimonialsSection from "@/components/TestimonialSection/Testimonials";
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
@@ -102,9 +100,8 @@ export default function Home() {
         </section>
       </div>
       <BusinessSolutions />
-      {/* <Sec /> */}
-      {/* <MyComponent /> */}
       <Main />
+      <TestimonialsSection />
     </>
   );
 }
