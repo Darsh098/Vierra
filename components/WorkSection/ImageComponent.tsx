@@ -9,7 +9,7 @@ export function ImageComponent() {
       src: "/cs1.jpeg",
       alt: "Image for introduction section",
       className:
-        "object-cover shrink-0 w-full rounded-[30px] md:rounded-[60px] h-[300px] md:h-[422px] md:w-[716px] shadow-[20px_40px_200px_0px_#7A13D080]",
+        "object-cover shrink-0 w-full rounded-[30px] md:rounded-[60px] h-[300px] md:h-[422px] md:w-[716px] lg:shadow-[20px_15px_100px_0px_#7A13D080]",
     },
     {
       src: "/cs2.jpeg",

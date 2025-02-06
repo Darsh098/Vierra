@@ -162,7 +162,7 @@ export function BusinessSolutions() {
           </div>
 
           <div className="relative mx-auto">
-            <div className="absolute inset-0 ml-10 bg-[#701CC0] translate-y-10 translate-x-8 opacity-40 blur-[80px]" />
+            <div className="absolute inset-0 ml-10 md:bg-[#701CC0] translate-y-10 translate-x-8 opacity-40 blur-[80px]" />
             <div className="relative overflow-hidden rounded-[60px]">
               <Image
                 src="/client1.jpeg"
