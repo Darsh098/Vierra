@@ -1,6 +1,8 @@
+"use client";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { BusinessSolutions } from "@/components/BusinessSection/BusinessSolutions";
@@ -16,12 +18,18 @@ export default function Home() {
     <>
       <div className="min-h-screen bg-[#18042A] text-white relative overflow-hidden z-0">
         {/* Vertical Lines */}
-        {/* {[128, 318, 498, 678, 858, 1038, 1218, 1398].map((left, index) => ( */}
         {[178, 358, 538, 718, 898, 1078, 1258].map((left, index) => (
-          <div
+          <motion.div
             key={index}
-            className="absolute top-0 h-full border-l  border-white opacity-5"
+            className="absolute top-0 h-full border-l border-white opacity-5"
             style={{ left: `${left}px` }}
+            initial={{ height: 0 }}
+            animate={{ height: "100%" }}
+            transition={{
+              duration: 1.5,
+              delay: index * 0.2,
+              ease: "easeInOut",
+            }}
           />
         ))}
 
