@@ -1,13 +1,14 @@
-"use client";
-import { useState } from "react";
-import { Bricolage_Grotesque, Inter } from "next/font/google";
-import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Bricolage_Grotesque, Inter, Figtree } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import { StatsGrid } from "./StatsGrid";
 import { motion, AnimatePresence } from "framer-motion";
+import Timeline from "./Timeline";
+import GridComponent from "./GridComponent";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
+const figtree = Figtree({ subsets: ["latin"] });
 
 interface TabItem {
   id: string;
@@ -17,55 +18,68 @@ interface TabItem {
 
 const tabs: TabItem[] = [
   {
-    id: "streamline",
-    title: "Streamline operations",
+    id: "onboarding",
+    title: "Seamless Onboarding",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "We start immediately. Our onboarding process is fast and simple, working towards starting your lead generation swiftly.",
   },
   {
     id: "efficiency",
-    title: "Increasing efficiency",
+    title: "Increasing Efficiency",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "We take responsibility for your online presence so you can spend more time doing the work you enjoy.",
   },
   {
     id: "costs",
-    title: "Reduce costs",
+    title: "Reduce Spending",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "Spend only the resources required to generate leads that pay back your investments and increase your capital.",
   },
   {
-    id: "insights",
-    title: "Data insights",
+    id: "streamline",
+    title: "Streamline Systems",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "Automate client acquisition with our case study-driven systems. Patients discover your office through organic outreach.",
   },
 ];
 
 export function BusinessSolutions() {
-  const [activeTab, setActiveTab] = useState("efficiency");
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prevTab) => {
+        const currentIndex = tabs.findIndex((tab) => tab.id === prevTab);
+        const nextIndex = (currentIndex + 1) % tabs.length; // Loop back to the start
+        return tabs[nextIndex].id;
+      });
+    }, 10000); // Change every 10 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [activeTab]);
 
   return (
-    <section className="w-full py-20 px-6 bg-white" id="solutions">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full py-20 px-6 bg-[#F3F3F3]" id="solutions">
+      <div className="max-w-7xl mx-auto px-6 max-md:px-2">
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <h2
             className={`text-3xl font-bold text-[#18042A] mb-4 ${bricolage.className}`}
           >
-            We offer real-time solution tools for your entire business
+            We Are Not Your Average
+            <br />
+            “Consultants”
           </h2>
           <p className={`text-[#8A9197] text-lg ${inter.className}`}>
-            Our comprehensive tools offers small business owners a one-stop-shop
-            solution to manage their accounting, sales, marketing, admission
-            efforts, CRM, financial models, email campaigns, QuickBooks
-            integration, record-keeping, and a range of other crucial business
-            functions.
+            We reduce complexity by eliminating corporate formalities. We
+            implement a clear-cut and simple approach to increasing the return
+            on ad spending. Our team hand-picks clients so we can offer more
+            leads and focus on your success.
           </p>
         </div>
 
         {/* Tabs and Image Section */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 place-items-center">
-          <div className="space-y-6 relative">
+          <div className="space-y-6 relative max-md:min-h-[480px]">
             {tabs.map((tab) => (
               <motion.div
                 key={tab.id}
@@ -74,7 +88,9 @@ export function BusinessSolutions() {
                 initial={false}
               >
                 <motion.h3
-                  className={`text-5xl mb-6 relative inline-block`}
+                  className={`text-2xl sm:text-4xl md:text-5xl md:mb-6 relative inline-block ${
+                    activeTab === tab.id && "mb-6"
+                  } `}
                   animate={{
                     color: activeTab === tab.id ? "#701CC0" : "#929C9A",
                   }}
@@ -94,15 +110,20 @@ export function BusinessSolutions() {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
                       />
+
                       <motion.div
-                        className="absolute bottom-[-12px] left-0 w-full h-[2px]"
+                        className="absolute bottom-[-12px] left-0 w-full h-[2px] bg-[#D9DEDD] overflow-hidden"
                         layoutId="underline"
                         transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-                        style={{
-                          background:
-                            "linear-gradient(to right, #701CC0 0%, #701CC0 60%, #D9DEDD 60%, #D9DEDD 100%)",
-                        }}
-                      />
+                      >
+                        <motion.div
+                          className="h-full bg-[#701CC0]"
+                          initial={{ width: "0%" }}
+                          animate={{ width: "100%" }}
+                          transition={{ duration: 10, ease: "linear" }}
+                          key={activeTab}
+                        />
+                      </motion.div>
                     </>
                   )}
                 </motion.h3>
@@ -143,6 +164,7 @@ export function BusinessSolutions() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.15 }}
+                        className={`${figtree.className}`}
                       >
                         <p className="text-[#646A69] text-[18px] mb-2">
                           {tab.content}
@@ -151,7 +173,7 @@ export function BusinessSolutions() {
                           variant="link"
                           className="text-[#022C22] text-[18px] hover:text-[#701CC0] p-0"
                         >
-                          Learn more
+                          Learn More
                         </Button>
                       </motion.div>
                     </motion.div>
@@ -162,24 +184,15 @@ export function BusinessSolutions() {
           </div>
 
           <div className="relative mx-auto">
-            <div className="absolute inset-0 ml-10 md:bg-[#701CC0] translate-y-10 translate-x-8 opacity-40 blur-[80px]" />
-            <div className="relative overflow-hidden rounded-[60px]">
-              <Image
-                src="/client1.jpeg"
-                alt="Woman working on laptop"
-                width={386}
-                height={580}
-                quality={100}
-                priority
-                className="w-[386px] h-[580px] object-cover rounded-[60px]"
-              />
-            </div>
+            <GridComponent />
           </div>
         </div>
-
-        <div className="mt-24">
-          <StatsGrid />
-        </div>
+      </div>
+      <div className="mt-24">
+        <Timeline />
+      </div>
+      <div className="mt-24">
+        <StatsGrid />
       </div>
     </section>
   );
