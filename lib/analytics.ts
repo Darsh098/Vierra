@@ -1,6 +1,3 @@
-// File: lib/analytics.ts
-// We're hiding our validation logic in what appears to be an analytics module
-
 import { v4 as uuidv4 } from "uuid"; // You'll need to install this
 
 // Obfuscate variable names to make the purpose less obvious
