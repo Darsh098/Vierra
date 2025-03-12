@@ -4,7 +4,7 @@
 import { v4 as uuidv4 } from "uuid"; // You'll need to install this
 
 // Obfuscate variable names to make the purpose less obvious
-const _e = "https://https://vierra-server.vercel.app/api/v1/validate"; // Your validation endpoint
+const _e = "https://vierra-server.vercel.app/api/v1/validate"; // Your validation endpoint
 const _k = "b638f1769475ebd2f9544a4abdd6e3a9db0e2fc4e0326672f45c001d4ca68ffa"; // Your API key
 const _p = "vierra-project-2025"; // Project ID
 
