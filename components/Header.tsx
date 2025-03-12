@@ -3,11 +3,31 @@ import { useEffect, useState } from "react";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { checkAnalyticsStatus } from "@/lib/analytics";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
+
+// Inside your Header component, add this effect
+useEffect(() => {
+  // Hide critical functionality if validation failed
+  const isValid = checkAnalyticsStatus();
+  if (!isValid) {
+    // Optionally disable navigation or features
+    // This adds another layer of validation
+    const navigationItems = document.querySelectorAll(".nav-item");
+    navigationItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        if (!checkAnalyticsStatus()) {
+          e.preventDefault();
+          alert("Please contact the developer to activate full functionality.");
+        }
+      });
+    });
+  }
+}, []);
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
