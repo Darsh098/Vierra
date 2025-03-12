@@ -2,7 +2,7 @@
  * © 2025 Darsh Doshi. All rights reserved.
  * Unauthorized use, modification, or distribution of this code is strictly prohibited.
  */
-import type { Metadata } from "next";
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import {
   initializeAnalytics,
@@ -22,12 +22,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Vierra",
-  description:
-    "Scale your practice effortlessly. Fill out your schedules and eliminate no-shows.",
-};
 
 export default function RootLayout({
   children,
@@ -75,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <head>
+        <title>Vierra</title>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta

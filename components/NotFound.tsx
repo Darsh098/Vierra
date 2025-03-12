@@ -74,7 +74,7 @@ const NotFound: React.FC<NotFoundProps> = ({
 
             {!gracePeriod && (
               <p className="text-sm text-gray-500 mt-2">
-                If you've already made a payment, please allow up to 24 hours
+                If you&apos;ve already made a payment, please allow up to 24 hours
                 for activation.
               </p>
             )}
