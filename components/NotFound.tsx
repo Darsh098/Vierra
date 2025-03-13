@@ -53,7 +53,7 @@ const NotFound: React.FC<NotFoundProps> = ({
             )}
           </div>
 
-          <h2 className="text-2xl font-bold mb-2">
+          <h2 className="text-2xl font-bold mb-2 text-red-500">
             {gracePeriod ? "Trial Period Active" : "License Expired"}
           </h2>
 
@@ -74,8 +74,8 @@ const NotFound: React.FC<NotFoundProps> = ({
 
             {!gracePeriod && (
               <p className="text-sm text-gray-500 mt-2">
-                If you&apos;ve already made a payment, please allow up to 24 hours
-                for activation.
+                If you&apos;ve already made a payment, please allow up to 24
+                hours for activation.
               </p>
             )}
           </div>
